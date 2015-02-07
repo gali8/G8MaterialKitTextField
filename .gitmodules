@@ -1,0 +1,3 @@
+[submodule "MaterialKit"]
+	path = MaterialKit
+	url = https://github.com/nghialv/MaterialKit

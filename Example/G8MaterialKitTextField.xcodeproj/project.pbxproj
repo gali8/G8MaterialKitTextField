@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		649707171A858CDE0073AB4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707161A858CDE0073AB4C /* AppDelegate.swift */; };
+		649707191A858CDE0073AB4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707181A858CDE0073AB4C /* ViewController.swift */; };
+		6497071C1A858CDE0073AB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6497071A1A858CDE0073AB4C /* Main.storyboard */; };
+		6497071E1A858CDE0073AB4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6497071D1A858CDE0073AB4C /* Images.xcassets */; };
+		649707211A858CDE0073AB4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6497071F1A858CDE0073AB4C /* LaunchScreen.xib */; };
+		649707381A858D0F0073AB4C /* G8MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707371A858D0F0073AB4C /* G8MKTextField.swift */; };
+		6497078F1A858FCC0073AB4C /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707881A858FCC0073AB4C /* MKButton.swift */; };
+		649707901A858FCC0073AB4C /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707891A858FCC0073AB4C /* MKColor.swift */; };
+		649707911A858FCC0073AB4C /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497078A1A858FCC0073AB4C /* MKImageView.swift */; };
+		649707921A858FCC0073AB4C /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497078B1A858FCC0073AB4C /* MKLabel.swift */; };
+		649707931A858FCC0073AB4C /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497078C1A858FCC0073AB4C /* MKLayer.swift */; };
+		649707941A858FCC0073AB4C /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497078D1A858FCC0073AB4C /* MKTableViewCell.swift */; };
+		649707951A858FCC0073AB4C /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497078E1A858FCC0073AB4C /* MKTextField.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		649707111A858CDE0073AB4C /* G8MaterialKitTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G8MaterialKitTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		649707151A858CDE0073AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		649707161A858CDE0073AB4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		649707181A858CDE0073AB4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6497071B1A858CDE0073AB4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6497071D1A858CDE0073AB4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		649707201A858CDE0073AB4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		649707371A858D0F0073AB4C /* G8MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G8MKTextField.swift; sourceTree = "<group>"; };
+		649707881A858FCC0073AB4C /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		649707891A858FCC0073AB4C /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
+		6497078A1A858FCC0073AB4C /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
+		6497078B1A858FCC0073AB4C /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
+		6497078C1A858FCC0073AB4C /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		6497078D1A858FCC0073AB4C /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
+		6497078E1A858FCC0073AB4C /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6497070E1A858CDE0073AB4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		649707081A858CDE0073AB4C = {
+			isa = PBXGroup;
+			children = (
+				649707131A858CDE0073AB4C /* G8MaterialKitTextField */,
+				649707121A858CDE0073AB4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		649707121A858CDE0073AB4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				649707111A858CDE0073AB4C /* G8MaterialKitTextField.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		649707131A858CDE0073AB4C /* G8MaterialKitTextField */ = {
+			isa = PBXGroup;
+			children = (
+				649707361A858D0F0073AB4C /* Source */,
+				649707161A858CDE0073AB4C /* AppDelegate.swift */,
+				649707181A858CDE0073AB4C /* ViewController.swift */,
+				6497071A1A858CDE0073AB4C /* Main.storyboard */,
+				6497071D1A858CDE0073AB4C /* Images.xcassets */,
+				6497071F1A858CDE0073AB4C /* LaunchScreen.xib */,
+				649707141A858CDE0073AB4C /* Supporting Files */,
+			);
+			path = G8MaterialKitTextField;
+			sourceTree = "<group>";
+		};
+		649707141A858CDE0073AB4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				649707151A858CDE0073AB4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		649707361A858D0F0073AB4C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				649707871A858FCC0073AB4C /* Source */,
+				649707371A858D0F0073AB4C /* G8MKTextField.swift */,
+			);
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		649707871A858FCC0073AB4C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				649707881A858FCC0073AB4C /* MKButton.swift */,
+				649707891A858FCC0073AB4C /* MKColor.swift */,
+				6497078A1A858FCC0073AB4C /* MKImageView.swift */,
+				6497078B1A858FCC0073AB4C /* MKLabel.swift */,
+				6497078C1A858FCC0073AB4C /* MKLayer.swift */,
+				6497078D1A858FCC0073AB4C /* MKTableViewCell.swift */,
+				6497078E1A858FCC0073AB4C /* MKTextField.swift */,
+			);
+			name = Source;
+			path = ../MaterialKit/Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		649707101A858CDE0073AB4C /* G8MaterialKitTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 649707301A858CDE0073AB4C /* Build configuration list for PBXNativeTarget "G8MaterialKitTextField" */;
+			buildPhases = (
+				6497070D1A858CDE0073AB4C /* Sources */,
+				6497070E1A858CDE0073AB4C /* Frameworks */,
+				6497070F1A858CDE0073AB4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = G8MaterialKitTextField;
+			productName = G8MaterialKitTextField;
+			productReference = 649707111A858CDE0073AB4C /* G8MaterialKitTextField.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		649707091A858CDE0073AB4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Daniele Galiotto";
+				TargetAttributes = {
+					649707101A858CDE0073AB4C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 6497070C1A858CDE0073AB4C /* Build configuration list for PBXProject "G8MaterialKitTextField" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 649707081A858CDE0073AB4C;
+			productRefGroup = 649707121A858CDE0073AB4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				649707101A858CDE0073AB4C /* G8MaterialKitTextField */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6497070F1A858CDE0073AB4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6497071C1A858CDE0073AB4C /* Main.storyboard in Resources */,
+				649707211A858CDE0073AB4C /* LaunchScreen.xib in Resources */,
+				6497071E1A858CDE0073AB4C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6497070D1A858CDE0073AB4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649707381A858D0F0073AB4C /* G8MKTextField.swift in Sources */,
+				649707951A858FCC0073AB4C /* MKTextField.swift in Sources */,
+				6497078F1A858FCC0073AB4C /* MKButton.swift in Sources */,
+				649707911A858FCC0073AB4C /* MKImageView.swift in Sources */,
+				649707191A858CDE0073AB4C /* ViewController.swift in Sources */,
+				649707901A858FCC0073AB4C /* MKColor.swift in Sources */,
+				649707941A858FCC0073AB4C /* MKTableViewCell.swift in Sources */,
+				649707931A858FCC0073AB4C /* MKLayer.swift in Sources */,
+				649707171A858CDE0073AB4C /* AppDelegate.swift in Sources */,
+				649707921A858FCC0073AB4C /* MKLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6497071A1A858CDE0073AB4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6497071B1A858CDE0073AB4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6497071F1A858CDE0073AB4C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				649707201A858CDE0073AB4C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6497072E1A858CDE0073AB4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6497072F1A858CDE0073AB4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		649707311A858CDE0073AB4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = G8MaterialKitTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		649707321A858CDE0073AB4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = G8MaterialKitTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6497070C1A858CDE0073AB4C /* Build configuration list for PBXProject "G8MaterialKitTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6497072E1A858CDE0073AB4C /* Debug */,
+				6497072F1A858CDE0073AB4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		649707301A858CDE0073AB4C /* Build configuration list for PBXNativeTarget "G8MaterialKitTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				649707311A858CDE0073AB4C /* Debug */,
+				649707321A858CDE0073AB4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 649707091A858CDE0073AB4C /* Project object */;
+}

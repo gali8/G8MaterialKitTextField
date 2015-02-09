@@ -1,6 +1,6 @@
 G8MaterialKitTextField
 ===========
-*** The MKTextField Validator v. 1.0 - Totally @IBInspectable ***
+***The MKTextField Validator v. 1.0 - Totally @IBInspectable***
 
 Features:
 -----

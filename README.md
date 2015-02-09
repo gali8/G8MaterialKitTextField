@@ -20,7 +20,7 @@ How to use:
 -----
 - NO CODE REQUIRED
 - The G8MaterialKitTextField properties are **@IBInspectable** so you can configure them directly in the Storyboard.
-- Open the Storyboard, drag a **UITextField** in a UIViewController and set the UITextField class to **G8MKTextField**.
+- Open the Storyboard, drag the **UITextField** in a UIViewController and set the UITextField class to **G8MKTextField**.
 - That's all! See the Storyboard in the Example project to start the validation. All customizable properties are listed below.
 
 ```
@@ -44,7 +44,8 @@ How to use:
 - placeholder (sets the placeholder dircetly from the storyboard to the MKTextField control)
 ```
 
-#### Regex Pattern Types (set the number in the regexPatternEnum property. NOTE: regexPatternEnum will ovverride the regexPatternCustom property, set regexPatternEnum to 0 for disable o use custom regex pattern)
+#### Regex Pattern Types
+***set the number in the regexPatternEnum property. NOTE: regexPatternEnum will ovverride the regexPatternCustom property, set regexPatternEnum to 0 for disable o use custom regex pattern)***
 ``` swift
     case CustomOrNone = "" //0
     case ZeroOrMoreChars = "^.*$" //1
@@ -85,5 +86,5 @@ license (see LICENSE.md).
 Contributors
 =================
 
-Daniele Galiotto (founder) - iOS Freelance Developer -
+***Daniele Galiotto*** (founder) - iOS Freelance Developer -
 **[www.g8production.com](http://www.g8production.com)**

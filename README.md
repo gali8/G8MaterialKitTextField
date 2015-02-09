@@ -8,7 +8,7 @@ Automatic MKTextField validation, using regex patterns.
 
 Based on the MKTextField of the [MKMaterialKit] (https://github.com/nghialv/MaterialKit)
 
-How To Use:
+Project installation:
 -----
 ```
 git clone https://github.com/gali8/G8MaterialKitTextField
@@ -16,10 +16,12 @@ cd G8MaterialKitTextField
 git submodule update --init --recursive
 ```
 
-The G8MaterialKitTextField properties are **@IBInspectable** so you can configure them directly in the Storyboard.
-See the example project.
-
-- NO CODE REQUIRED -
+How to use:
+-----
+- NO CODE REQUIRED
+- The G8MaterialKitTextField properties are **@IBInspectable** so you can configure them directly in the Storyboard.
+- Open the Storyboard, drag a **UITextField** in a UIViewController and set the UITextField class to **G8MKTextField**.
+- That's all! See the Storyboard in the Example project to start the validation. All customizable properties are listed below.
 
 ```
 - regexPatternCustom: the custom regex to use! Note: when you set the regexPatternCustom from the Storyboard, chars like \ will be automatically translated in \\.
@@ -42,7 +44,7 @@ See the example project.
 - placeholder (sets the placeholder dircetly from the storyboard to the MKTextField control)
 ```
 
-#### Regex Pattern Types
+#### Regex Pattern Types (set the number in the regexPatternEnum property. NOTE: regexPatternEnum will ovverride the regexPatternCustom property, set regexPatternEnum to 0 for disable o use custom regex pattern)
 ``` swift
     case CustomOrNone = "" //0
     case ZeroOrMoreChars = "^.*$" //1

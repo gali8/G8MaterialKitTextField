@@ -6,7 +6,7 @@ Features:
 -----
 Automatic MKTextField validation, using regex patterns.
 
-Based on the MKTextField in the [MKMaterialKit] (https://github.com/nghialv/MaterialKit)
+Based on the MKTextField of the [MKMaterialKit] (https://github.com/nghialv/MaterialKit)
 
 How To Use:
 -----

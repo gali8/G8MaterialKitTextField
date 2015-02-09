@@ -1,4 +1,5 @@
-# G8MaterialKitTextField
+G8MaterialKitTextField
+===========
 The MKTextField Validator v. 1.0
 
 Features:
@@ -21,7 +22,7 @@ See the example project.
 
 NO CODE - <strong>Only storyboard settings!<strong>
 
-``` swift
+```
 - regexPatternCustom: the custom regex to use! Note: when you set the regexPatternCustom from the Storyboard, chars like \ will be automatically translated in \\.
 - regexPatternEnum: use regex patterns already in the G8MaterialKitTextField. Use 0 for Custom or None else look at the list below.
 
@@ -65,7 +66,7 @@ NO CODE - <strong>Only storyboard settings!<strong>
 
 #### G8MKTextField
 <p align="center">
-<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/u/41528778/G8MaterialKitTextField.gif" width="365" height="568">
+<img style="-webkit-user-select: none;" src="https://www.dropbox.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif?dl=0" width="365" height="568">
 </p>
 #### MKTextField
 <p align="center">

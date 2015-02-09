@@ -65,7 +65,7 @@ See the example project.
 
 #### G8MKTextField
 <p align="center">
-<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif" width="365" height="568">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif" width="268" height="480">
 </p>
 
 #### MKTextField

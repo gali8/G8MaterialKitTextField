@@ -1,11 +1,10 @@
 G8MaterialKitTextField
 ===========
-The MKTextField Validator v. 1.0
+*** The MKTextField Validator v. 1.0 - Totally @IBInspectable ***
 
 Features:
 -----
 Automatic MKTextField validation, using regex patterns.
-Fully @IBInspectable
 
 Based on the MKTextField in the [MKMaterialKit] (https://github.com/nghialv/MaterialKit)
 
@@ -17,10 +16,10 @@ cd G8MaterialKitTextField
 git submodule update --init --recursive
 ```
 
-All G8MaterialKitTextField properties are @IBInspectable so you can configure them directly in the Storyboard.
+The G8MaterialKitTextField properties are **@IBInspectable** so you can configure them directly in the Storyboard.
 See the example project.
 
-NO CODE - <strong>Only storyboard settings!<strong>
+- NO CODE REQUIRED -
 
 ```
 - regexPatternCustom: the custom regex to use! Note: when you set the regexPatternCustom from the Storyboard, chars like \ will be automatically translated in \\.
@@ -66,8 +65,9 @@ NO CODE - <strong>Only storyboard settings!<strong>
 
 #### G8MKTextField
 <p align="center">
-<img style="-webkit-user-select: none;" src="https://www.dropbox.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif?dl=0" width="365" height="568">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif" width="365" height="568">
 </p>
+
 #### MKTextField
 <p align="center">
 <img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/u/8556646/MKTextField.gif" width="365" height="568">

@@ -31,27 +31,27 @@ let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .O
 
 @IBDesignable
 class G8MKTextField: MKTextField, UITextFieldDelegate {
-
+    
     private var regexPattern: String? = nil
     @IBInspectable var regexPatternCustom: String? = nil { //executed for first
         didSet {
             regexPattern = regexPatternCustom
         }
     }
-    @IBInspectable var regexPatternEnum: Int = 0 { //executed for second
+    @IBInspectable var regexPatternEnum: Int = 0  { //executed for second
         didSet {
             if regexPatternEnum != 0 && regexPatterTypes.count > regexPatternEnum {
                 regexPattern = (regexPatterTypes[regexPatternEnum] as RegexPatternTypes).rawValue
             }
         }
     }
-
+    
     @IBInspectable var borderColor: UIColor = UIColor.blackColor() {
         didSet {
             super.layer.borderColor = borderColor.CGColor
         }
     }
-
+    
     @IBInspectable var defaultBottomBorderColor: UIColor = UIColor.lightGrayColor() {
         didSet {
             super.bottomBorderColor = defaultBottomBorderColor
@@ -67,30 +67,93 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
             super.tintColor = defaultTintColor
         }
     }
-
-    @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.greenColor()
-    @IBInspectable var invalidCircleLayerColor: UIColor = UIColor.greenColor()
-    @IBInspectable var invalidTintColor: UIColor = UIColor.greenColor()
-
+    
+    @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.redColor()
+    @IBInspectable var invalidCircleLayerColor: UIColor = UIColor.redColor()
+    @IBInspectable var invalidTintColor: UIColor = UIColor.redColor()
+    
     @IBInspectable var validBottomBorderColor: UIColor = UIColor.greenColor()
     @IBInspectable var validCircleLayerColor: UIColor = UIColor.greenColor()
     @IBInspectable var validTintColor: UIColor = UIColor.greenColor()
-
+    
+    @IBInspectable var leftImageLeftPadding: CGFloat = 0
+    @IBInspectable var leftImageTopPadding: CGFloat = 0
+    @IBInspectable var leftImageRightPadding: CGFloat = 0
+    @IBInspectable var leftImageBottomPadding: CGFloat = 0
+    var leftImageView: UIImageView? = nil
+    @IBInspectable var leftImage: UIImage? = nil {
+        didSet {
+            self.leftImageView?.removeFromSuperview()
+            self.leftImageView = UIImageView(image: leftImage)
+            if let imgView = self.leftImageView {
+                imgView.backgroundColor = UIColor.clearColor()
+                imgView.contentMode = UIViewContentMode.ScaleAspectFit
+                self.addSubview(imgView)
+            }
+        }
+    }
+    
+    @IBInspectable var rightImageLeftPadding: CGFloat = 0
+    @IBInspectable var rightImageTopPadding: CGFloat = 0
+    @IBInspectable var rightImageRightPadding: CGFloat = 0
+    @IBInspectable var rightImageBottomPadding: CGFloat = 0
+    var rightImageView: UIImageView? = nil
+    @IBInspectable var rightImage: UIImage? = nil {
+        didSet {
+            self.rightImageView?.removeFromSuperview()
+            self.rightImageView = UIImageView(image: rightImage)
+            if let imgView = self.rightImageView {
+                imgView.backgroundColor = UIColor.clearColor()
+                imgView.contentMode = UIViewContentMode.ScaleAspectFit
+                self.addSubview(imgView)
+            }
+        }
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.delegate = self
     }
-
+    
+    private func calculateRect(r: CGRect) -> CGRect{
+        var rect = r
+        var hasLeft = false
+        if let imgView = self.leftImageView {
+            hasLeft = true
+            imgView.frame = CGRectMake(self.leftImageLeftPadding, self.leftImageTopPadding, self.frame.size.height - self.leftImageLeftPadding - self.leftImageRightPadding, self.frame.size.height - self.leftImageTopPadding - self.leftImageBottomPadding)
+            rect.origin.x = self.frame.size.height
+            rect.size.width = self.frame.size.width - self.frame.size.height
+        }
+        
+        if let imgView = self.rightImageView {
+            imgView.frame = CGRectMake(self.frame.size.width - self.rightImageLeftPadding - self.frame.size.height - self.rightImageRightPadding, self.rightImageTopPadding, self.frame.size.height - self.rightImageLeftPadding - self.rightImageRightPadding,self.frame.size.height - self.rightImageTopPadding - self.rightImageBottomPadding)
+            rect.size.width = hasLeft ? rect.size.width - imgView.frame.size.width : self.frame.size.width - self.frame.size.height
+        }
+        
+        return rect
+    }
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        var rect = super.textRectForBounds(bounds)
+        return self.calculateRect(rect)
+    }
+    
     override func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         super.placeholder = self.placeholder
-        return super.placeholderRectForBounds(bounds)
+        var rect = super.placeholderRectForBounds(bounds)
+        return self.calculateRect(rect)
     }
-
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        var rect = super.editingRectForBounds(bounds)
+        return self.calculateRect(rect)
+    }
+    
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         self.isValid()
         return true
@@ -101,13 +164,13 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         self.isValid(text)
         return true
     }
-
+    
     private func isValid(text: String) -> Bool {
         if(regexPattern?.isEmpty == false) {
             let regex = NSRegularExpression(pattern: regexPattern!, options: NSRegularExpressionOptions.CaseInsensitive, error: nil)
             let range = NSMakeRange(0, countElements(text))
             let match = regex?.rangeOfFirstMatchInString(text, options: NSMatchingOptions.ReportProgress, range: range)
-
+            
             if( match?.location != NSNotFound) {
                 self.tintColor = self.validTintColor
                 self.bottomBorderColor = self.validBottomBorderColor
@@ -121,13 +184,13 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
                 return false
             }
         }
-
+        
         self.tintColor = self.defaultTintColor
         self.bottomBorderColor = self.defaultBottomBorderColor
         self.circleLayerColor = self.defaultCircleLayerColor
         return true
     }
-
+    
     func isValid() -> Bool {
         return self.isValid(self.text)
     }

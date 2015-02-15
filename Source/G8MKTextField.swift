@@ -68,11 +68,11 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
-    @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.redColor()
+    @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.clearColor()
     @IBInspectable var invalidCircleLayerColor: UIColor = UIColor.redColor()
     @IBInspectable var invalidTintColor: UIColor = UIColor.redColor()
     
-    @IBInspectable var validBottomBorderColor: UIColor = UIColor.greenColor()
+    @IBInspectable var validBottomBorderColor: UIColor = UIColor.clearColor()
     @IBInspectable var validCircleLayerColor: UIColor = UIColor.greenColor()
     @IBInspectable var validTintColor: UIColor = UIColor.greenColor()
     

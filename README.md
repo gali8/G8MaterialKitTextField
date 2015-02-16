@@ -29,14 +29,17 @@ How to use:
 
 - borderColor: (it updates the layer of the control)
 
+- defaultTextColor: (it updates and override the MKTextField textColor property)
 - defaultBottomBorderColor: (it updates the MKTextField bottomBorderColor property)
 - defaultCircleLayerColor: (it updates the MKTextField circleLayerColor property)
-- defaultTintColor: (it updates the MKTextField tintColor property)
+- defaultTintColor: (it updates and override the MKTextField tintColor property)
 
+- invalidTextColor:
 - invalidBottomBorderColor:
 - invalidCircleLayerColor:
 - invalidTintColor:
 
+- validTextColor:
 - validBottomBorderColor:
 - validCircleLayerColor:
 - validTintColor:

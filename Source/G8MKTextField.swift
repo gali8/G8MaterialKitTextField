@@ -55,6 +55,11 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
+    @IBInspectable var defaultTextColor: UIColor = UIColor.darkGrayColor() {
+        didSet {
+            super.textColor = defaultTextColor
+        }
+    }
     @IBInspectable var defaultBottomBorderColor: UIColor = UIColor.lightGrayColor() {
         didSet {
             super.bottomBorderColor = defaultBottomBorderColor
@@ -71,10 +76,12 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
+    @IBInspectable var invalidTextColor: UIColor = UIColor.redColor()
     @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.clearColor()
     @IBInspectable var invalidCircleLayerColor: UIColor = UIColor.redColor()
     @IBInspectable var invalidTintColor: UIColor = UIColor.redColor()
     
+    @IBInspectable var validTextColor: UIColor = UIColor.redColor()
     @IBInspectable var validBottomBorderColor: UIColor = UIColor.clearColor()
     @IBInspectable var validCircleLayerColor: UIColor = UIColor.greenColor()
     @IBInspectable var validTintColor: UIColor = UIColor.greenColor()
@@ -83,6 +90,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     @IBInspectable var leftImageTopPadding: CGFloat = 0
     @IBInspectable var leftImageRightPadding: CGFloat = 0
     @IBInspectable var leftImageBottomPadding: CGFloat = 0
+    
     var leftImageView: UIImageView? = nil
     @IBInspectable var leftImage: UIImage? = nil {
         didSet {
@@ -175,12 +183,14 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
             let match = regex?.rangeOfFirstMatchInString(text, options: NSMatchingOptions.ReportProgress, range: range)
             
             if( match?.location != NSNotFound) {
+                self.textColor = self.validTextColor
                 self.tintColor = self.validTintColor
                 self.bottomBorderColor = self.validBottomBorderColor
                 self.circleLayerColor = self.validCircleLayerColor
                 return true
             }
             else {
+                self.textColor = self.invalidTextColor
                 self.tintColor = self.invalidTintColor
                 self.bottomBorderColor = self.invalidBottomBorderColor
                 self.circleLayerColor = self.invalidCircleLayerColor
@@ -188,6 +198,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
             }
         }
         
+        self.textColor = self.defaultTextColor
         self.tintColor = self.defaultTintColor
         self.bottomBorderColor = self.defaultBottomBorderColor
         self.circleLayerColor = self.defaultCircleLayerColor

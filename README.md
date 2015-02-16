@@ -77,10 +77,13 @@ How to use:
     case ComplexPassword = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})" //18 es. 1num1CHAR1char
 ```
 
-#### Functions
+#### Class Functions
 ``` swift
 class func areValid(textFields: [G8MKTextField]) -> Bool ... //to check if any G8MKTextField is valid
+```
 
+#### Instance Functions
+``` swift
 func isValid() -> Bool ... //to check if self is valid
 ```
 

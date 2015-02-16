@@ -51,7 +51,7 @@ How to use:
 ```
 
 #### Regex Pattern Types
-***set the number in the regexPatternEnum property. NOTE: regexPatternEnum will ovverride the regexPatternCustom property, set regexPatternEnum to 0 for disable o use custom regex pattern)***
+***set the number in the regexPatternEnum property. NOTE: regexPatternEnum will ovverride the regexPatternCustom property, set regexPatternEnum to 0 for disable it or use custom regex patterns***
 ``` swift
     case CustomOrNone = "" //0
     case ZeroOrMoreChars = "^.*$" //1

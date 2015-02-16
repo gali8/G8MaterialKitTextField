@@ -35,6 +35,19 @@ let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .O
 @IBDesignable
 class G8MKTextField: MKTextField, UITextFieldDelegate {
     
+    //MARK: - Class
+    
+    class func areValid(textFields: [G8MKTextField]) -> Bool{
+        for txf in textFields {
+            if(txf.isValid() == false) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    //MARK: - Instance
+    
     private var regexPattern: String? = nil
     @IBInspectable var regexPatternCustom: String? = nil { //executed for first
         didSet {

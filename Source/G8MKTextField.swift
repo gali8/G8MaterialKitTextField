@@ -192,7 +192,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     private func isValid(text: String) -> Bool {
         if(regexPattern?.isEmpty == false) {
             let regex = NSRegularExpression(pattern: regexPattern!, options: NSRegularExpressionOptions.CaseInsensitive, error: nil)
-            let range = NSMakeRange(0, countElements(text))
+            let range = NSMakeRange(0, count(text))
             let match = regex?.rangeOfFirstMatchInString(text, options: NSMatchingOptions.ReportProgress, range: range)
             
             if( match?.location != NSNotFound) {

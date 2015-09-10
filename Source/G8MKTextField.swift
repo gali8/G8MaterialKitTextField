@@ -2,7 +2,7 @@
 //  G8MKTextField.swift
 //  G8MaterialKitTextField
 //
-//  Created by Daniele on 02/09/15.
+//  Created by Daniele on 10/09/15.
 //  Copyright (c) 2015 Daniele Galiotto. All rights reserved.
 //
 
@@ -135,7 +135,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
     }
@@ -227,7 +227,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     }
     
     func isValid() -> Bool {
-        return self.isValid(self.text)
+        return self.isValid(self.text!)
     }
     
     

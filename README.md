@@ -1,12 +1,13 @@
 G8MaterialKitTextField
 ===========
-***The MKTextField Validator v. 1.0 - Totally @IBInspectable***
+***The MKTextField Validator v. 2.0 - Totally @IBInspectable - works with Swift 2 ***
 
 Features:
 -----
 Automatic MKTextField validation, using regex patterns.
 
-Based on the MKTextField of the [MKMaterialKit] (https://github.com/nghialv/MaterialKit)
+Based on the MKTextField of the [MKMaterialKit] (https://github.com/nghialv/MaterialKit) (MKMaterlialKit must be updated to Swift 2)
+
 
 Project installation:
 -----

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "49D32D9F58475033DC755F25C598BE4F8951C5B1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "39C24F858ED829FAA0D85AAAF44281FF64B670AC" : 0,
+    "49D32D9F58475033DC755F25C598BE4F8951C5B1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0CECFD97-0A0A-4442-8F01-EB97F5CA2ACE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "39C24F858ED829FAA0D85AAAF44281FF64B670AC" : "G8MaterialKitTextFieldMaterialKit",
+    "49D32D9F58475033DC755F25C598BE4F8951C5B1" : "G8MaterialKitTextField"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "G8MaterialKitTextField",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/G8MaterialKitTextField.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nghialv\/MaterialKit",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "39C24F858ED829FAA0D85AAAF44281FF64B670AC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gali8\/G8MaterialKitTextField",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49D32D9F58475033DC755F25C598BE4F8951C5B1"
+    }
+  ]
+}

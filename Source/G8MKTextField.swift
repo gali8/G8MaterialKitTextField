@@ -135,7 +135,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
     }
@@ -164,18 +164,18 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     }
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
-        var rect = super.textRectForBounds(bounds)
+        let rect = super.textRectForBounds(bounds)
         return self.calculateRect(rect)
     }
     
     override func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         super.placeholder = self.placeholder
-        var rect = super.placeholderRectForBounds(bounds)
+        let rect = super.placeholderRectForBounds(bounds)
         return self.calculateRect(rect)
     }
     
     override func editingRectForBounds(bounds: CGRect) -> CGRect {
-        var rect = super.editingRectForBounds(bounds)
+        let rect = super.editingRectForBounds(bounds)
         return self.calculateRect(rect)
     }
     
@@ -185,15 +185,15 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        var text = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let text = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
         self.isValid(text)
         return true
     }
     
     private func isValid(text: String) -> Bool {
         if(regexPattern?.isEmpty == false) {
-            let regex = NSRegularExpression(pattern: regexPattern!, options: NSRegularExpressionOptions.CaseInsensitive, error: nil)
-            let range = NSMakeRange(0, count(text))
+            let regex = try? NSRegularExpression(pattern: regexPattern!, options: NSRegularExpressionOptions.CaseInsensitive)
+            let range = NSMakeRange(0, text.characters.count)
             let match = regex?.rangeOfFirstMatchInString(text, options: NSMatchingOptions.ReportProgress, range: range)
             
             if( match?.location != NSNotFound) {

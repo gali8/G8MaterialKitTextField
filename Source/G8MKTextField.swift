@@ -2,7 +2,7 @@
 //  G8MKTextField.swift
 //  G8MaterialKitTextField
 //
-//  Created by Daniele on 07/02/15.
+//  Created by Daniele on 02/09/15.
 //  Copyright (c) 2015 Daniele Galiotto. All rights reserved.
 //
 
@@ -88,6 +88,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
             super.tintColor = defaultTintColor
         }
     }
+    @IBInspectable var resignFirstResponderOnReturn: Bool = true
     
     @IBInspectable var invalidTextColor: UIColor = UIColor.redColor()
     @IBInspectable var invalidBottomBorderColor: UIColor = UIColor.clearColor()
@@ -215,6 +216,13 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         self.tintColor = self.defaultTintColor
         self.bottomBorderColor = self.defaultBottomBorderColor
         self.circleLayerColor = self.defaultCircleLayerColor
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if self.resignFirstResponderOnReturn == true {
+            self.resignFirstResponder()
+        }
         return true
     }
     

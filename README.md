@@ -76,6 +76,8 @@ How to use:
     case USPhoneNumber = "1?\\W*([2-9][0-8][0-9])\\W*([2-9][0-9]{2})\\W*([0-9]{4})(\\se?x?t?(\\d*))?" //16
     case EasyPassword = "(.{4,30})" //17 es. abcd
     case ComplexPassword = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})" //18 es. 1num1CHAR1char
+    case EUBirthDate = "^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\\d\\d$" //19 es. dd/MM/yyyy
+
 ```
 
 #### Class Functions

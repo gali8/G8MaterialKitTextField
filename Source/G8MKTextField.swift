@@ -23,14 +23,16 @@ enum RegexPatternTypes: String {
     case Year = "^\\d{4}$" //11
     case YearFrom1900To2099 = "^(19|20)\\d{2}$" //12
     case InternationalPhoneNumber = "^([0]{2}|[+])\\d{1,4} ?\\d{3} ?\\d{10}$" //13 es. +0000 000 0000000000 +00 000 0000000000 ....
-    case InternationalPhoneNumber11 = "^([0]{2}|[+])\\d{2} ?\\d{3} ?\\d{6,8}$" //14 es. +00 000 0000000 ....
+    case InternationalPhoneNumber11 = "^([0]{2}|[+])\\d{2} ?\\d{3} ?\\d{5,8}$" //14 es. +00 000 0000000 ....
     case InternationalEPPPhoneNumber = "^\\+[0-9]{1,3}\\.[0-9]{4,14}(?:x.+)?$" //15
     case USPhoneNumber = "1?\\W*([2-9][0-8][0-9])\\W*([2-9][0-9]{2})\\W*([0-9]{4})(\\se?x?t?(\\d*))?" //16
     case EasyPassword = "(.{4,30})" //17 es. abcd
     case ComplexPassword = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})" //18 es. 1num1CHAR1char
+    case EUBirthDate = "^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\\d\\d$" //19 es. dd/MM/yyyy
 }
 
-let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .OneOrMoreChars, .OneChar, .Bool, .ZeroOrMoreNumbers, .OneOrMoreNumbers, .OneNumber, .Name, .Email, .USBirthDate, .Year, .YearFrom1900To2099, .InternationalPhoneNumber, .InternationalPhoneNumber11, .InternationalEPPPhoneNumber, .USPhoneNumber, .EasyPassword, .ComplexPassword]
+let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .OneOrMoreChars, .OneChar, .Bool, .ZeroOrMoreNumbers, .OneOrMoreNumbers, .OneNumber, .Name, .Email, .USBirthDate, .Year, .YearFrom1900To2099, .InternationalPhoneNumber, .InternationalPhoneNumber11, .InternationalEPPPhoneNumber, .USPhoneNumber, .EasyPassword, .ComplexPassword, .EUBirthDate]
+
 
 @IBDesignable
 class G8MKTextField: MKTextField, UITextFieldDelegate {

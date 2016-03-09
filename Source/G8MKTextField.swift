@@ -2,7 +2,7 @@
 //  G8MKTextField.swift
 //  G8MaterialKitTextField
 //
-//  Created by Daniele on 10/09/15.
+//  Created by Daniele on 08/08/16.
 //  Copyright (c) 2015 Daniele Galiotto. All rights reserved.
 //
 
@@ -29,10 +29,10 @@ enum RegexPatternTypes: String {
     case EasyPassword = "(.{4,30})" //17 es. abcd
     case ComplexPassword = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})" //18 es. 1num1CHAR1char
     case EUBirthDate = "^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\\d\\d$" //19 es. dd/MM/yyyy
+    case AllPhoneNumbers = "^([0]{2}|[+])\\d{1,3}[.\\-()0-9x\\s]{8,}$" //20 all phone numbers
 }
 
-let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .OneOrMoreChars, .OneChar, .Bool, .ZeroOrMoreNumbers, .OneOrMoreNumbers, .OneNumber, .Name, .Email, .USBirthDate, .Year, .YearFrom1900To2099, .InternationalPhoneNumber, .InternationalPhoneNumber11, .InternationalEPPPhoneNumber, .USPhoneNumber, .EasyPassword, .ComplexPassword, .EUBirthDate]
-
+let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .OneOrMoreChars, .OneChar, .Bool, .ZeroOrMoreNumbers, .OneOrMoreNumbers, .OneNumber, .Name, .Email, .USBirthDate, .Year, .YearFrom1900To2099, .InternationalPhoneNumber, .InternationalPhoneNumber11, .InternationalEPPPhoneNumber, .USPhoneNumber, .EasyPassword, .ComplexPassword, .EUBirthDate, .AllPhoneNumbers]
 
 @IBDesignable
 class G8MKTextField: MKTextField, UITextFieldDelegate {
@@ -137,7 +137,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
     }
@@ -187,7 +187,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let text = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let text = textField.text == nil ? "" : (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
         self.isValid(text)
         return true
     }

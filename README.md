@@ -77,6 +77,7 @@ How to use:
     case EasyPassword = "(.{4,30})" //17 es. abcd
     case ComplexPassword = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})" //18 es. 1num1CHAR1char
     case EUBirthDate = "^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\\d\\d$" //19 es. dd/MM/yyyy
+    case AllPhoneNumbers = "^([0]{2}|[+])\\d{1,3}[.\\-()0-9x\\s]{8,}$" //20 all phone numbers
 
 ```
 

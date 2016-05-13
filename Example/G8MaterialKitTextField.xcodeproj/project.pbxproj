@@ -115,14 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				64644D321CE5D02500F8B420 /* CCCountrySelector */,
-				649707871A858FCC0073AB4C /* MKTextField */,
+				649707871A858FCC0073AB4C /* MaterialKit submodule */,
 				649707371A858D0F0073AB4C /* G8MKTextField.swift */,
 			);
 			name = Source;
 			path = ../../Source;
 			sourceTree = "<group>";
 		};
-		649707871A858FCC0073AB4C /* MKTextField */ = {
+		649707871A858FCC0073AB4C /* MaterialKit submodule */ = {
 			isa = PBXGroup;
 			children = (
 				649707881A858FCC0073AB4C /* MKButton.swift */,
@@ -133,7 +133,7 @@
 				6497078D1A858FCC0073AB4C /* MKTableViewCell.swift */,
 				6497078E1A858FCC0073AB4C /* MKTextField.swift */,
 			);
-			name = MKTextField;
+			name = "MaterialKit submodule";
 			path = ../MaterialKit/Source;
 			sourceTree = "<group>";
 		};

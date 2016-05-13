@@ -101,12 +101,12 @@ func isValid() -> Bool ... //to check if self is valid
 <img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif" width="268" height="480">
 </p>
 
-#### G8MKTextField with hasLeftCountryCodeView = true
+#### G8MKTextField Country Code (hasLeftCountryCodeView = true)
 <p align="center">
-<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField-CountryCode1.png" width="268" height="480">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/o3blh4rm9cia1gz/G8MaterialKitTextField-CountryCode1.png" width="268" height="480">
 </p>
 <p align="center">
-<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField-CountryCode2.png" width="268" height="480">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/l1eqlsy8f5ixzc1/G8MaterialKitTextField-CountryCode2.png" width="268" height="480">
 </p>
 
 #### MKTextField

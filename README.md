@@ -8,14 +8,24 @@ Automatic MKTextField validation, using regex patterns.
 
 Country code selector included (inspired to [CCCountrySelector] (https://github.com/ChadChang/CCCountrySelector))
 
-Based on the MKTextField [MKMaterialKit] (https://github.com/nghialv/MaterialKit) (included version already works with Swift 2)
+Based on the MKTextField [MKMaterialKit] (https://github.com/nghialv/MaterialKit) (included version - MKTextField Folder - already works with Swift 2)
 
-Project installation:
+Project installations:
 -----
+
+###SUBMODULE###
 ```
 git clone https://github.com/gali8/G8MaterialKitTextField
 cd G8MaterialKitTextField
 git submodule update --init --recursive
+```
+--- or ---
+
+###MKTextField Folder###
+```
+git clone https://github.com/gali8/G8MaterialKitTextField
+open G8MaterialKitTextField XCode Project
+import the folder MKTextField into the project
 ```
 
 How to use:

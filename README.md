@@ -1,13 +1,14 @@
 G8MaterialKitTextField
 ===========
-***The MKTextField Validator v. 2.0 - Totally @IBInspectable - works with Swift 2 ***
+***The MKTextField Validator v. 2.1 - Totally @IBInspectable - works with Swift 2 ***
 
 Features:
 -----
 Automatic MKTextField validation, using regex patterns.
 
-Based on the MKTextField of the [MKMaterialKit] (https://github.com/nghialv/MaterialKit) (MKMaterlialKit must be updated to Swift 2)
+Country code selector included (inspired to [CCCountrySelector] (https://github.com/ChadChang/CCCountrySelector))
 
+Based on the MKTextField [MKMaterialKit] (https://github.com/nghialv/MaterialKit) (included version already works with Swift 2)
 
 Project installation:
 -----
@@ -23,6 +24,7 @@ How to use:
 - The G8MaterialKitTextField properties are **@IBInspectable** so you can configure them directly in the Storyboard.
 - Open the Storyboard, drag the **UITextField** in a UIViewController and set the UITextField class to **G8MKTextField**.
 - That's all! See the Storyboard in the Example project to start the validation. All customizable properties are listed below.
+- Country code included
 
 ```
 - regexPatternCustom: the custom regex to use! Note: when you set the regexPatternCustom from the Storyboard, chars like \ will be automatically translated in \\.
@@ -52,6 +54,9 @@ How to use:
 
 - rightImage: (add right image in the UITextField)
 - rightImageLeftPadding, rightImageTopPadding, rightImageRightPadding, rightImageBottomPadding
+
+- hasLeftCountryCodeView
+
 ```
 
 #### Regex Pattern Types
@@ -65,8 +70,8 @@ How to use:
     case ZeroOrMoreNumbers = "^[0-9]*$" //5
     case OneOrMoreNumbers = "^[0-9]+$" //6
     case OneNumber = "^[0-9]$" //7
-    case Name = "^[a-zA-Z\\s]+$" //8
-    case Email = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$" //9
+    case Name = "^[a-zA-ZÀ-ÿ\\s']+$" //8
+    case Email = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$" //9
     case USBirthDate = "^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$" //10 MM/dd/yyyy
     case Year = "^\\d{4}$" //11
     case YearFrom1900To2099 = "^(19|20)\\d{2}$" //12
@@ -94,6 +99,14 @@ func isValid() -> Bool ... //to check if self is valid
 #### G8MKTextField
 <p align="center">
 <img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField.gif" width="268" height="480">
+</p>
+
+#### G8MKTextField with hasLeftCountryCodeView = true
+<p align="center">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField-CountryCode1.png" width="268" height="480">
+</p>
+<p align="center">
+<img style="-webkit-user-select: none;" src="https://dl.dropboxusercontent.com/s/8hho89scxc2r1wh/G8MaterialKitTextField-CountryCode2.png" width="268" height="480">
 </p>
 
 #### MKTextField

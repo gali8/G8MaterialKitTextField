@@ -2,7 +2,7 @@
 //  G8MKTextField.swift
 //  G8MaterialKitTextField
 //
-//  Created by Daniele on 08/08/16.
+//  Created by Daniele on 08/05/16.
 //  Copyright (c) 2015 Daniele Galiotto. All rights reserved.
 //
 
@@ -17,8 +17,8 @@ enum RegexPatternTypes: String {
     case ZeroOrMoreNumbers = "^[0-9]*$" //5
     case OneOrMoreNumbers = "^[0-9]+$" //6
     case OneNumber = "^[0-9]$" //7
-    case Name = "^[a-zA-Z\\s]+$" //8
-    case Email = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$" //9
+    case Name = "^[a-zA-ZÀ-ÿ\\s']+$" //8
+    case Email = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$" //9
     case USBirthDate = "^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$" //10 MM/dd/yyyy
     case Year = "^\\d{4}$" //11
     case YearFrom1900To2099 = "^(19|20)\\d{2}$" //12
@@ -35,7 +35,7 @@ enum RegexPatternTypes: String {
 let regexPatterTypes: [RegexPatternTypes] = [.CustomOrNone, .ZeroOrMoreChars, .OneOrMoreChars, .OneChar, .Bool, .ZeroOrMoreNumbers, .OneOrMoreNumbers, .OneNumber, .Name, .Email, .USBirthDate, .Year, .YearFrom1900To2099, .InternationalPhoneNumber, .InternationalPhoneNumber11, .InternationalEPPPhoneNumber, .USPhoneNumber, .EasyPassword, .ComplexPassword, .EUBirthDate, .AllPhoneNumbers]
 
 @IBDesignable
-class G8MKTextField: MKTextField, UITextFieldDelegate {
+class G8MKTextField: MKTextField, UITextFieldDelegate, CountrySelectorViewDelegate {
     
     //MARK: - Class
     
@@ -102,6 +102,38 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     @IBInspectable var validCircleLayerColor: UIColor = UIColor.greenColor()
     @IBInspectable var validTintColor: UIColor = UIColor.greenColor()
     
+    @IBInspectable var leftCountryCodeViewLeftPadding: CGFloat = 0
+    @IBInspectable var leftCountryCodeViewTopPadding: CGFloat = 0
+    @IBInspectable var leftCountryCodeViewRightPadding: CGFloat = 0
+    @IBInspectable var leftCountryCodeViewBottomPadding: CGFloat = 0
+    
+    var leftCountryCodeViewPickerViewBackgroundColor: UIColor?
+    var leftCountryCodeViewPresentationView: UIView? = nil
+    var leftCountryCodeView: CountrySelectorView? = nil
+    @IBInspectable var hasLeftCountryCodeView: Bool = false {
+        didSet {
+            if hasLeftCountryCodeView == true {
+                leftCountryCodeView?.removeFromSuperview()
+                let frame = CGRect(x: 0, y: 0 , width: 50, height: self.frame.size.height)
+                leftCountryCodeView = CountrySelectorView(frame: frame)
+                leftCountryCodeView?.phoneCodeLabel.frame = CGRectZero
+                //leftCountryCodeView?.phoneCodeLabel.removeFromSuperview
+                leftCountryCodeView?.phoneCodeLabel.textColor = UIColor.clearColor() //so the text is hidden but clickable. This is the reason for width at 50
+                
+                self.addSubview(leftCountryCodeView!)
+                let locale = NSLocale.currentLocale()
+                let code = (locale.objectForKey(NSLocaleCountryCode) as! String)
+                
+                leftCountryCodeView?.delegate = self
+                leftCountryCodeView?.setDefaultCountry(code)
+                leftCountryCodeView?.setFrequentCountryList([code])
+            }
+            else {
+                leftCountryCodeView?.removeFromSuperview()
+            }
+        }
+    }
+    
     @IBInspectable var leftImageLeftPadding: CGFloat = 0
     @IBInspectable var leftImageTopPadding: CGFloat = 0
     @IBInspectable var leftImageRightPadding: CGFloat = 0
@@ -124,6 +156,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     @IBInspectable var rightImageTopPadding: CGFloat = 0
     @IBInspectable var rightImageRightPadding: CGFloat = 0
     @IBInspectable var rightImageBottomPadding: CGFloat = 0
+    
     var rightImageView: UIImageView? = nil
     @IBInspectable var rightImage: UIImage? = nil {
         didSet {
@@ -150,16 +183,29 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     private func calculateRect(r: CGRect) -> CGRect{
         var rect = r
         var hasLeft = false
-        if let imgView = self.leftImageView {
+        
+        var tempRectWidth = self.frame.size.width
+        
+        if let leftImgView = self.leftImageView {
             hasLeft = true
-            imgView.frame = CGRectMake(self.leftImageLeftPadding, self.leftImageTopPadding, self.frame.size.height - self.leftImageLeftPadding - self.leftImageRightPadding, self.frame.size.height - self.leftImageTopPadding - self.leftImageBottomPadding)
+            leftImgView.frame = CGRectMake(self.leftImageLeftPadding, self.leftImageTopPadding, self.frame.size.height - self.leftImageLeftPadding - self.leftImageRightPadding, self.frame.size.height - self.leftImageTopPadding - self.leftImageBottomPadding)
+            tempRectWidth = tempRectWidth - self.frame.size.height
             rect.origin.x = self.frame.size.height
-            rect.size.width = self.frame.size.width - self.frame.size.height
+            rect.size.width = tempRectWidth
         }
         
-        if let imgView = self.rightImageView {
-            imgView.frame = CGRectMake(self.frame.size.width - self.rightImageLeftPadding - self.frame.size.height - self.rightImageRightPadding, self.rightImageTopPadding, self.frame.size.height - self.rightImageLeftPadding - self.rightImageRightPadding,self.frame.size.height - self.rightImageTopPadding - self.rightImageBottomPadding)
-            rect.size.width = hasLeft ? rect.size.width - imgView.frame.size.width : self.frame.size.width - self.frame.size.height
+        if let countryCodeView = self.leftCountryCodeView {
+            hasLeft = true
+            let ccFrame = countryCodeView.frame
+            countryCodeView.frame = CGRectMake(self.leftCountryCodeViewLeftPadding, self.leftCountryCodeViewTopPadding, ccFrame.size.width - self.leftCountryCodeViewLeftPadding - self.leftCountryCodeViewRightPadding, ccFrame.size.height - self.leftCountryCodeViewTopPadding - self.leftCountryCodeViewBottomPadding)
+            tempRectWidth = tempRectWidth - ccFrame.size.width
+            rect.origin.x = self.frame.size.height
+            rect.size.width = tempRectWidth
+        }
+        
+        if let rightImgView = self.rightImageView {
+            rightImgView.frame = CGRectMake(self.frame.size.width - self.rightImageLeftPadding - self.frame.size.height - self.rightImageRightPadding, self.rightImageTopPadding, self.frame.size.height - self.rightImageLeftPadding - self.rightImageRightPadding, self.frame.size.height - self.rightImageTopPadding - self.rightImageBottomPadding)
+            rect.size.width = hasLeft ? rect.size.width - rightImgView.frame.size.width : self.frame.size.width - self.frame.size.height
         }
         
         return rect
@@ -188,6 +234,7 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let text = textField.text == nil ? "" : (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        
         self.isValid(text)
         return true
     }
@@ -232,5 +279,36 @@ class G8MKTextField: MKTextField, UITextFieldDelegate {
         return self.isValid(self.text!)
     }
     
+    //MARK: CountrySelectorViewDelegate
+    func layoutPickView(pickerView:UIPickerView, toolBar: UIToolbar, pickerViewContainer: UIView) {
+
+        toolBar.tintColor = leftCountryCodeViewPickerViewBackgroundColor
+        pickerView.backgroundColor = leftCountryCodeViewPickerViewBackgroundColor
+
+        let variableBindings = ["pickerViewContainer": pickerViewContainer]
+        
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pickerViewContainer]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: variableBindings)
+        let bottomConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[pickerViewContainer]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: variableBindings)
+
+        if leftCountryCodeViewPresentationView != nil {
+            leftCountryCodeViewPresentationView?.addConstraints(horizontalConstraints)
+            leftCountryCodeViewPresentationView?.addConstraints(bottomConstraints)
+        }
+        else {
+            self.superview?.addConstraints(horizontalConstraints)
+            self.superview?.addConstraints(bottomConstraints)
+        }
+    }
     
+    func showPickInView()->UIView {
+        if self.isFirstResponder() {
+            self.resignFirstResponder()
+        }
+        return leftCountryCodeViewPresentationView ?? self.superview!
+    }
+    
+    func phoneCodeDidChange(myPickerView: UIPickerView, phoneCode: String) {
+        self.text = phoneCode
+        self.isValid()
+    }
 }

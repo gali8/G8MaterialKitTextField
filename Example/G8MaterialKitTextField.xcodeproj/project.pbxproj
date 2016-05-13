@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64644D381CE5D02500F8B420 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64644D331CE5D02500F8B420 /* CountryData.swift */; };
+		64644D391CE5D02500F8B420 /* CountrySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64644D341CE5D02500F8B420 /* CountrySelectorView.swift */; };
+		64644D3A1CE5D02500F8B420 /* CustomCountryPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64644D351CE5D02500F8B420 /* CustomCountryPickView.swift */; };
+		64644D3B1CE5D02500F8B420 /* diallingcode.json in Resources */ = {isa = PBXBuildFile; fileRef = 64644D361CE5D02500F8B420 /* diallingcode.json */; };
+		64644D3C1CE5D02500F8B420 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64644D371CE5D02500F8B420 /* Flags.xcassets */; };
 		649707171A858CDE0073AB4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707161A858CDE0073AB4C /* AppDelegate.swift */; };
 		649707191A858CDE0073AB4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649707181A858CDE0073AB4C /* ViewController.swift */; };
 		6497071C1A858CDE0073AB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6497071A1A858CDE0073AB4C /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64644D331CE5D02500F8B420 /* CountryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
+		64644D341CE5D02500F8B420 /* CountrySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrySelectorView.swift; sourceTree = "<group>"; };
+		64644D351CE5D02500F8B420 /* CustomCountryPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountryPickView.swift; sourceTree = "<group>"; };
+		64644D361CE5D02500F8B420 /* diallingcode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diallingcode.json; sourceTree = "<group>"; };
+		64644D371CE5D02500F8B420 /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		649707111A858CDE0073AB4C /* G8MaterialKitTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G8MaterialKitTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649707151A858CDE0073AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		649707161A858CDE0073AB4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64644D321CE5D02500F8B420 /* CCCountrySelector */ = {
+			isa = PBXGroup;
+			children = (
+				64644D331CE5D02500F8B420 /* CountryData.swift */,
+				64644D341CE5D02500F8B420 /* CountrySelectorView.swift */,
+				64644D351CE5D02500F8B420 /* CustomCountryPickView.swift */,
+				64644D361CE5D02500F8B420 /* diallingcode.json */,
+				64644D371CE5D02500F8B420 /* Flags.xcassets */,
+			);
+			path = CCCountrySelector;
+			sourceTree = "<group>";
+		};
 		649707081A858CDE0073AB4C = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +114,7 @@
 		649707361A858D0F0073AB4C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				64644D321CE5D02500F8B420 /* CCCountrySelector */,
 				649707871A858FCC0073AB4C /* Source */,
 				649707371A858D0F0073AB4C /* G8MKTextField.swift */,
 			);
@@ -140,6 +163,8 @@
 		649707091A858CDE0073AB4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Daniele Galiotto";
 				TargetAttributes = {
@@ -171,6 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64644D3C1CE5D02500F8B420 /* Flags.xcassets in Resources */,
+				64644D3B1CE5D02500F8B420 /* diallingcode.json in Resources */,
 				6497071C1A858CDE0073AB4C /* Main.storyboard in Resources */,
 				649707211A858CDE0073AB4C /* LaunchScreen.xib in Resources */,
 				6497071E1A858CDE0073AB4C /* Images.xcassets in Resources */,
@@ -184,10 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64644D3A1CE5D02500F8B420 /* CustomCountryPickView.swift in Sources */,
+				64644D391CE5D02500F8B420 /* CountrySelectorView.swift in Sources */,
 				649707381A858D0F0073AB4C /* G8MKTextField.swift in Sources */,
 				649707951A858FCC0073AB4C /* MKTextField.swift in Sources */,
 				6497078F1A858FCC0073AB4C /* MKButton.swift in Sources */,
 				649707911A858FCC0073AB4C /* MKImageView.swift in Sources */,
+				64644D381CE5D02500F8B420 /* CountryData.swift in Sources */,
 				649707191A858CDE0073AB4C /* ViewController.swift in Sources */,
 				649707901A858FCC0073AB4C /* MKColor.swift in Sources */,
 				649707941A858FCC0073AB4C /* MKTableViewCell.swift in Sources */,
@@ -302,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = G8MaterialKitTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.g8production.g8materialkitTextFieldExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -312,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = G8MaterialKitTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.g8production.g8materialkitTextFieldExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

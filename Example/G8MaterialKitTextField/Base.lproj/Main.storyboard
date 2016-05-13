@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="G8MKTextField - Custom Email Regex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SqK-02-Khs" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
                                 <rect key="frame" x="16" y="38" width="568" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Gkl-Md-7vD"/>
+                                    <constraint firstAttribute="height" constant="40" id="ALr-zy-4Cp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -64,7 +65,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="G8MKTextField - Enum Zero Or More Chars" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OK7-dJ-Mh2" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
-                                <rect key="frame" x="16" y="158" width="568" height="40"/>
+                                <rect key="frame" x="16" y="133" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BF1-mR-3qH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -109,7 +113,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="G8MKTextField - Enum One Or More Chars" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yr4-Ii-tyG" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
-                                <rect key="frame" x="16" y="206" width="568" height="40"/>
+                                <rect key="frame" x="16" y="181" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cv0-gr-Xex"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -154,8 +161,11 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="G8MKTextField - Enum Email Regex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Whl-5a-9My" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
-                                <rect key="frame" x="16" y="95" width="568" height="40"/>
+                                <rect key="frame" x="16" y="85" width="568" height="40"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QH3-it-Caf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -205,7 +215,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="G8MKTextField - Enum None" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-o6-T7S" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
-                                <rect key="frame" x="16" y="254" width="568" height="40"/>
+                                <rect key="frame" x="16" y="229" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZS5-Fx-xIT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -249,28 +262,76 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="G8MKTextField - Country Code + All phone numbers" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-ko-y8u" customClass="G8MKTextField" customModule="G8MaterialKitTextField" customModuleProvider="target">
+                                <rect key="frame" x="16" y="277" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="I8X-Rk-bVi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="invalidCircleLayerColor">
+                                        <color key="value" red="0.92156862750000001" green="0.16862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="invalidTintColor">
+                                        <color key="value" red="0.92156862750000001" green="0.16862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="validCircleLayerColor">
+                                        <color key="value" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="validTintColor">
+                                        <color key="value" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="validBottomBorderColor">
+                                        <color key="value" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="invalidBottomBorderColor">
+                                        <color key="value" red="0.92156862750000001" green="0.16862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="floatingPlaceholderEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBottomBorderColor">
+                                        <color key="value" red="0.0023652419339999999" green="0.18502924479999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultCircleLayerColor">
+                                        <color key="value" red="0.0023652419339999999" green="0.18502924479999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultTintColor">
+                                        <color key="value" red="0.0023652419339999999" green="0.18502924479999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="regexPatternEnum">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasLeftCountryCodeView" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Whl-5a-9My" firstAttribute="leading" secondItem="SqK-02-Khs" secondAttribute="leading" id="0YM-Kl-pBe"/>
-                            <constraint firstItem="eKq-o6-T7S" firstAttribute="top" secondItem="yr4-Ii-tyG" secondAttribute="bottom" constant="8" symbolic="YES" id="4Dc-80-z5c"/>
-                            <constraint firstItem="eKq-o6-T7S" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="4sz-4Q-aTK"/>
-                            <constraint firstItem="eKq-o6-T7S" firstAttribute="leading" secondItem="yr4-Ii-tyG" secondAttribute="leading" id="6Eu-PK-vDM"/>
-                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="leading" secondItem="Whl-5a-9My" secondAttribute="leading" id="BLv-wz-v4s"/>
-                            <constraint firstItem="Whl-5a-9My" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="D41-Bf-i9N"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="height" secondItem="Whl-5a-9My" secondAttribute="height" id="DCb-wt-I2L"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="height" secondItem="eKq-o6-T7S" secondAttribute="height" id="JVb-GU-mPe"/>
-                            <constraint firstItem="yr4-Ii-tyG" firstAttribute="trailing" secondItem="eKq-o6-T7S" secondAttribute="trailing" id="Jze-qW-IX5"/>
-                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="trailing" secondItem="yr4-Ii-tyG" secondAttribute="trailing" id="TpG-1O-JYb"/>
-                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="top" secondItem="Whl-5a-9My" secondAttribute="bottom" constant="23" id="V9d-98-aja"/>
-                            <constraint firstItem="Whl-5a-9My" firstAttribute="trailing" secondItem="OK7-dJ-Mh2" secondAttribute="trailing" id="YR3-C1-EzK"/>
-                            <constraint firstItem="Whl-5a-9My" firstAttribute="top" secondItem="SqK-02-Khs" secondAttribute="bottom" constant="17" id="bWn-JM-6Qw"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="height" secondItem="yr4-Ii-tyG" secondAttribute="height" id="dTb-Rc-fn3"/>
-                            <constraint firstItem="yr4-Ii-tyG" firstAttribute="top" secondItem="OK7-dJ-Mh2" secondAttribute="bottom" constant="8" symbolic="YES" id="pvR-cj-7tx"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="height" secondItem="OK7-dJ-Mh2" secondAttribute="height" id="v9T-H3-Ru3"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="18" id="whA-wG-9a8"/>
-                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="leading" secondItem="yr4-Ii-tyG" secondAttribute="leading" id="yGk-TO-wdz"/>
-                            <constraint firstItem="SqK-02-Khs" firstAttribute="trailing" secondItem="Whl-5a-9My" secondAttribute="trailing" id="ycV-Oj-IwA"/>
+                            <constraint firstItem="SqK-02-Khs" firstAttribute="leading" secondItem="Whl-5a-9My" secondAttribute="leading" id="5dT-Zm-Axc"/>
+                            <constraint firstItem="Whl-5a-9My" firstAttribute="top" secondItem="SqK-02-Khs" secondAttribute="bottom" constant="7" id="6xN-Jv-Oge"/>
+                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="trailing" secondItem="yr4-Ii-tyG" secondAttribute="trailing" id="7Jg-an-xyc"/>
+                            <constraint firstItem="yr4-Ii-tyG" firstAttribute="top" secondItem="OK7-dJ-Mh2" secondAttribute="bottom" constant="8" symbolic="YES" id="8cb-ef-kDr"/>
+                            <constraint firstItem="SqK-02-Khs" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="BKh-xP-H2v"/>
+                            <constraint firstItem="SqK-02-Khs" firstAttribute="trailing" secondItem="Whl-5a-9My" secondAttribute="trailing" id="Met-jy-GWK"/>
+                            <constraint firstItem="Whl-5a-9My" firstAttribute="trailing" secondItem="OK7-dJ-Mh2" secondAttribute="trailing" id="Q9J-FN-WWl"/>
+                            <constraint firstItem="eKq-o6-T7S" firstAttribute="trailing" secondItem="sJP-ko-y8u" secondAttribute="trailing" id="S4X-Sd-xZu"/>
+                            <constraint firstItem="SqK-02-Khs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-4" id="S6F-At-1Tx"/>
+                            <constraint firstItem="eKq-o6-T7S" firstAttribute="top" secondItem="yr4-Ii-tyG" secondAttribute="bottom" constant="8" symbolic="YES" id="XQp-rB-UGl"/>
+                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="leading" secondItem="yr4-Ii-tyG" secondAttribute="leading" id="Z0c-9W-Uzz"/>
+                            <constraint firstItem="yr4-Ii-tyG" firstAttribute="trailing" secondItem="eKq-o6-T7S" secondAttribute="trailing" id="cF9-aw-dyL"/>
+                            <constraint firstItem="OK7-dJ-Mh2" firstAttribute="top" secondItem="Whl-5a-9My" secondAttribute="bottom" constant="8" symbolic="YES" id="fvg-fE-sNU"/>
+                            <constraint firstItem="yr4-Ii-tyG" firstAttribute="leading" secondItem="eKq-o6-T7S" secondAttribute="leading" id="gno-sP-KUQ"/>
+                            <constraint firstItem="sJP-ko-y8u" firstAttribute="top" secondItem="eKq-o6-T7S" secondAttribute="bottom" constant="8" id="mN3-aR-Dn7"/>
+                            <constraint firstItem="Whl-5a-9My" firstAttribute="leading" secondItem="OK7-dJ-Mh2" secondAttribute="leading" id="tY3-6T-G8S"/>
+                            <constraint firstItem="SqK-02-Khs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="18" id="w4G-mI-kNv"/>
+                            <constraint firstItem="eKq-o6-T7S" firstAttribute="leading" secondItem="sJP-ko-y8u" secondAttribute="leading" id="y8N-LY-Ho6"/>
                         </constraints>
                     </view>
                     <connections>

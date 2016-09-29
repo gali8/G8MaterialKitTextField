@@ -49,6 +49,41 @@ import UIKit
         setup()
     }
     
+    func getCountrySelectorDataList() -> [CountryData] { //dd custom update
+        do {
+            let resouceBundle = NSBundle(forClass: self.classForCoder)
+            let path = resouceBundle.pathForResource("diallingcode", ofType: "json")
+            
+            let dataStr = try NSString(contentsOfFile: path!,
+                                       encoding: NSUTF8StringEncoding)
+            
+            
+            let jsonData: AnyObject = try! NSJSONSerialization.JSONObjectWithData(
+                dataStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!,
+                options: [])
+            
+            var tempCountrylist:[CountryData] = []
+            
+            if let jsonItems = jsonData as? NSArray {
+                for itemDesc in jsonItems {
+                    let item: CountryData = CountryData.init(name: itemDesc["name"] as! String!, countryCode: itemDesc["code"] as! String!, phoneCode: (itemDesc["dial_code"] as! String!))
+                    
+                    tempCountrylist.append(item)
+                }
+            }
+            
+            tempCountrylist = tempCountrylist.sort({ (a, b) -> Bool in
+                return a.name <= b.name
+            })
+            
+            return tempCountrylist
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            return []
+        }
+        
+    }
     
     private func setup() {
         
@@ -161,7 +196,7 @@ import UIKit
         if let indexToSelect = indexToSelect {
             pickerView.selectRow(indexToSelect, inComponent: 0, animated: true)
             self.pickerView(pickerView, didSelectRow: indexToSelect, inComponent: 0)
-            selectedCountryData = countryDataList[indexToSelect]
+             self.selectedCountryData = countryDataList[indexToSelect]
         }
     }
     

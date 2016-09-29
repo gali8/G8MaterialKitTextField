@@ -24,6 +24,7 @@ import UIKit
     var pickerViewToolbar: UIToolbar
     var pickerView: UIPickerView
     var backgroundBlurEffect: UIBlurEffectStyle = .Light
+    var selectedCountryData: CountryData? = nil
     private var pickerViewContainer: UIView
     
     // MARK: - Initialization
@@ -160,6 +161,7 @@ import UIKit
         if let indexToSelect = indexToSelect {
             pickerView.selectRow(indexToSelect, inComponent: 0, animated: true)
             self.pickerView(pickerView, didSelectRow: indexToSelect, inComponent: 0)
+            selectedCountryData = countryDataList[indexToSelect]
         }
     }
     
@@ -178,6 +180,7 @@ import UIKit
         if let foundIndex = countryDataList.indexOf({$0.countryCode == currentSelectCountry.countryCode})
         {
             pickerView.selectRow(foundIndex, inComponent: 0, animated: false)
+            selectedCountryData = countryDataList[foundIndex]
         }
         
     }
@@ -186,7 +189,7 @@ import UIKit
     func updateView(selectRow:Int) {
         let countryData = countryDataList[selectRow]
         self.phoneCodeLabel.text =  countryData.phoneCode
-        
+        self.selectedCountryData = countryData
         self.flagImageView.image =  UIImage(named: countryData.countryCode.lowercaseString)
     }
     

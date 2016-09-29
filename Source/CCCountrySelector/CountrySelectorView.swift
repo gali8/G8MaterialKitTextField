@@ -2,7 +2,7 @@
 //  CountrySelectorView.swift
 //  CCCountrySelector
 //
-//  Created by Chad on 10/16/15 updated by DD Daniele Galiotto 04/19/16.
+//  Created by Chad on 10/16/15 updated by DD Daniele Galiotto 10/01/16.
 //  Copyright © 2015 Chad. All rights reserved.
 //
 
